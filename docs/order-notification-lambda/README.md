@@ -1,4 +1,4 @@
-[← Back to README](../README.md)
+[← Back to README](../../README.md)
 
 # order-notification-lambda
 https://github.com/voorevamshi/order-notification-lambda
