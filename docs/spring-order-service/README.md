@@ -1,4 +1,4 @@
-[← Back to README](../README.md)
+[← Back to README](../../README.md)
 
 # spring-order-service
 https://github.com/voorevamshi/spring-order-service

@@ -1,4 +1,4 @@
-[← Back to README](../README.md)
+[← Back to README](../../README.md)
 
 # springboot-crud-k8s
 https://github.com/voorevamshi/springboot-crud-k8s

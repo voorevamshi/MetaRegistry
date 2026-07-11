@@ -1,4 +1,4 @@
-[← Back to README](../README.md)
+[← Back to README](../../README.md)
 
 # product-service-loadtest
 https://github.com/voorevamshi/product-service-loadtest
