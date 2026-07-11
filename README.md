@@ -25,3 +25,13 @@ It serves as a practical blueprint and reference guide demonstrating the impleme
 [rest-common](docs/rest-common/README.md)	
 It likely functions as a shared library or "common" module containing reusable utilities, base classes, and configuration logic for RESTful APIs. It is designed to standardize error handling, response formatting, and authentication patterns across multiple microservices within an application ecosystem.	
 
+[rest-client](docs/rest-client/README.md)	
+It contains a dedicated Java utility or shared component designed to simplify and standardize synchronous HTTP communication between microservices. It wraps a modern Java HTTP client (such as Spring WebClient or RestClient) to provide robust, reusable configurations for timeouts, error recovery, and header propagation.
+
+
+[memory-leak-prometheus](docs/memory-leak-prometheus/README.md)	
+It contains a specialized diagnostic application and configuration testbed designed to simulate, monitor, and troubleshoot application memory leaks using Prometheus and Grafana. It serves as a practical blueprint for setting up real-time alerting rules and visualization dashboards to catch Out-of-Memory (OOM) boundary threats before they crash containerized workloads.
+
+
+[ecommerce-app](docs/ecommerce-app/README.md)
+It serves as a centralized orchestrator or reference workspace for an e-commerce platform built on a distributed microservices architecture. It ties together domain-specific services like ordering, product catalog, and inventory, providing a single ecosystem for local development and cloud deployment.

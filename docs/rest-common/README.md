@@ -4,16 +4,22 @@
 https://github.com/voorevamshi/rest-common
 
 
+
 ### Two-Line Summary
 
-This repository contains a dedicated microservice designed to track, manage, and audit real-time product stock levels across an e-commerce ecosystem. It exposes critical endpoints for checking stock availability during browsing and handles inventory reservations to prevent overselling during checkout workflows.
+The `rest-common` repository likely functions as a shared library or "common" module containing reusable utilities, base classes, and configuration logic for RESTful APIs. It is designed to standardize error handling, response formatting, and authentication patterns across multiple microservices within an application ecosystem.
 
-### Full Summary
+### Elaborated Summary
 
-The `inventory-service` acts as a highly specialized domain block within a broader microservices platform, completely isolating database operations related to warehouse stock from other domains like orders or shipping.
+In modern microservices architecture, it is standard practice to create a "common" or "shared" library to avoid code duplication. A repository named `rest-common` typically serves as the foundation for other services, containing:
 
--   **Stock Validation & Race Conditions:** The service provides high-performance API endpoints that other upstream components—like a product catalog or an order processing system—can query. It handles concurrent inventory deductions safely, ensuring that if multiple users attempt to purchase the exact same item at the same time, the stock count is locked and accurately adjusted without dropping into negative numbers.
+-   **Standardized API Response Models:** Uniform JSON structures for success and error responses (e.g., standardizing `400 Bad Request` or `500 Internal Server Error` payloads so that every service communicates in the same format).
     
--   **Microservice Choreography:** It integrates seamlessly with the rest of the application stack by maintaining synchronous endpoints (for instant availability checks) and listening for asynchronous event messages (e.g., via Kafka, SQS, or RabbitMQ). When an order is finalized or canceled, the service instantly updates the corresponding SKU counts.
+-   **Utility & Helper Functions:** Reusable code for common tasks like data validation, date-time formatting, or generating unique request IDs (correlation IDs) for distributed tracing.
     
--   **Database & Domain Isolation:** By running its own database instance, the service ensures that a heavy volume of inventory updates or warehouse audits never impacts the availability or performance of other systems like user management or payment gateways.
+-   **Authentication & Security Middleware:** Shared interceptors or filters that handle common authentication tasks (like verifying JWTs or API keys) before a request ever hits the core business logic of the service.
+    
+-   **Configuration & Exception Handling:** A central place to define global exception handlers or configuration loaders, ensuring that every service in the ecosystem behaves consistently when encountering configuration issues or application-level errors.
+    
+
+By packaging this logic into a `common` repo, the developer ensures that if a change is needed in how errors are handled, they only need to update this library once rather than editing every individual microservice repository.
